@@ -5,7 +5,7 @@ namespace Fociwebapp.Models
 {
     public class FociDBcontext : DbContext
     {
-        public FociDBcontext(DbContextOptions<FociDBcontext> options):base()
+        public FociDBcontext(DbContextOptions<FociDBcontext> options):base(options)
             {
 
             }
