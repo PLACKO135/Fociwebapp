@@ -1,0 +1,72 @@
+﻿@page
+@model Fociwebapp.Pages.ListazModel
+
+@{
+    ViewData["Title"] = "Listaz";
+}
+
+<h1>Listaz</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].Fordulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].HazaiVeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].VendegVeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].HazaiFel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].VendegFel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].VendegNev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].HazaiNev)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Meccs) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fordulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HazaiVeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendegVeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HazaiFel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendegFel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendegNev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HazaiNev)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
