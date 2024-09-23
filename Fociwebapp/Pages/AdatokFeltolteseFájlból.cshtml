@@ -1,0 +1,10 @@
+﻿@page
+@model Fociwebapp.Pages.AdatokFeltolteseFájlbólModel
+@{
+    ViewData["Title"] = "Adatok feltöltése fájlból";
+}
+<form method="post" enctype="multipart/form-data">
+    <label asp-for="Feltoltes">Add meg a fájlt</label>
+    <input type="file" asp-for="Feltoltes"/>
+    <input type="submit" value="Feltöltés"/>
+</form>
